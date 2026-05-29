@@ -176,3 +176,42 @@ Congratulations! Player 1 wins!
 ## Educational Purpose
 
 This project was developed as a mini-project to demonstrate Java programming, Swing GUI development, and Object-Oriented Programming principles.
+
+## 📸 Screenshots
+
+### 🚀 Start Screen
+
+<img width="280" height="138" alt="start" src="https://github.com/user-attachments/assets/5644b7fd-d680-4673-b04e-b085c744ce0c" />
+*The main game window where players can start the Snake and Ladder game.*
+
+---
+
+### 👥 Player Registration
+
+<img width="221" height="103" alt="players" src="https://github.com/user-attachments/assets/f55263ca-5004-475d-9ffc-a3fb32c917e7" />
+
+*Players enter their names before the game begins.*
+
+---
+
+### 🎮 Gameplay
+
+<img width="960" height="504" alt="gameplay" src="https://github.com/user-attachments/assets/36ac07f5-c34c-4b32-8e8a-a8ae3c0f2e26" />
+
+*Players take turns rolling the dice and moving across the board.*
+
+---
+
+### 🎲 Game Board
+
+<img width="960" height="502" alt="board" src="https://github.com/user-attachments/assets/07f8a2b7-4683-460a-87b0-ce93f43e7948" />
+
+*Graphical representation of the Snake and Ladder board with player positions.*
+
+---
+
+### 🏆 Winner Announcement
+
+<img width="960" height="503" alt="winner" src="https://github.com/user-attachments/assets/4f9f6360-953c-4559-8545-442f2eb711d7" />
+
+*The game announces the winner once a player reaches position 100.*
