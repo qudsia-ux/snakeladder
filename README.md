@@ -1,147 +1,178 @@
-# Snake and Ladder Java Mini Project
+# Snake and Ladder Game
 
-This is a beginner-friendly console-based Snake and Ladder game written in Java using Object-Oriented Programming.
+## Project Overview
+
+Snake and Ladder is a multiplayer board game developed using Java and Java Swing. The game allows multiple players to compete on a 10x10 board while following the traditional Snake and Ladder rules. The project demonstrates Object-Oriented Programming (OOP) concepts and graphical user interface development using Swing.
+
+---
+
+## Authors
+
+* Qudsia Fatima
+  
+---
+
+## Technologies Used
+
+* Java
+* Java Swing
+* Object-Oriented Programming (OOP)
+* Git & GitHub
+
+---
+
+## Features
+
+* Multiplayer support (2–6 players)
+* Interactive graphical user interface using Swing
+* Random dice rolling
+* Automatic turn management
+* Snakes and ladders implementation
+* Real-time player position updates
+* Winner announcement
+* User-friendly game interface
+
+---
+
+## OOP Concepts Implemented
+
+### Encapsulation
+
+Player, Board, Dice, Snake, and Ladder classes encapsulate their respective data and behaviors.
+
+### Abstraction
+
+Game logic is separated from the user interface.
+
+### Modularity
+
+The project is divided into multiple classes, each responsible for a specific functionality.
+
+### Association
+
+The Game class interacts with Player, Board, Dice, Snake, and Ladder objects.
+
+---
 
 ## Project Structure
 
 ```text
 src/
-|-- Main.java
-|-- Game.java
-|-- Board.java
-|-- Player.java
-|-- Dice.java
-|-- Snake.java
-|-- Ladder.java
+│
+├── Main.java
+├── Game.java
+├── Board.java
+├── Player.java
+├── Dice.java
+├── Snake.java
+├── Ladder.java
+├── GameFrame.java
+└── BoardPanel.java
 ```
+
+---
+
+## Class Description
+
+### Main.java
+
+Entry point of the application. Launches the game interface.
+
+### Game.java
+
+Controls game flow, player turns, movement logic, and winner determination.
+
+### Board.java
+
+Stores board information including snakes and ladders.
+
+### Player.java
+
+Maintains player details such as name and current position.
+
+### Dice.java
+
+Generates random dice values between 1 and 6.
+
+### Snake.java
+
+Represents snakes with head and tail positions.
+
+### Ladder.java
+
+Represents ladders with start and end positions.
+
+### GameFrame.java
+
+Creates the main Swing window and manages user interaction.
+
+### BoardPanel.java
+
+Displays the game board, player tokens, snakes, and ladders.
+
+---
+
+## Game Rules
+
+1. Each player rolls the dice in turn.
+2. Players move according to the dice value.
+3. Landing on a ladder moves the player upward.
+4. Landing on a snake moves the player downward.
+5. A player must reach exactly position 100 to win.
+6. The first player to reach 100 wins the game.
+
+---
 
 ## How to Run
 
+### Compile
+
 ```bash
 javac src/*.java
+```
+
+### Run
+
+```bash
 java -cp src Main
 ```
 
-## Class Explanation
+### Run Using VS Code
 
-### Main
+1. Open the project folder in VS Code.
+2. Ensure Java Extension Pack is installed.
+3. Open `Main.java`.
+4. Click the **Run** button.
 
-Handles the menu, user input, input validation, and player creation. It keeps user input/output separate from the core game objects.
+---
 
-Important methods:
-
-- `main(String[] args)`: Starts the program and displays the menu until the user exits.
-- `startGame(Scanner scanner)`: Reads player details and starts a new game.
-- `readPlayerCount(Scanner scanner)`: Ensures the number of players is between 2 and 6.
-- `readName(Scanner scanner, String message)`: Ensures player names are not empty.
-- `showRules()`: Displays the game rules.
-
-### Game
-
-Controls the game loop and turn-by-turn flow.
-
-Important methods:
-
-- `play()`: Runs the game until a player wins.
-- `playTurn(Player player)`: Rolls the dice, moves the player, checks snakes/ladders, and checks for a winner.
-- `showAllPlayerPositions()`: Displays all player positions after each turn.
-
-### Board
-
-Represents the 10x10 board with positions from 1 to 100. It stores snakes and ladders using `HashMap`.
-
-Important methods:
-
-- `getFinalPosition(int position)`: Checks whether a position contains a snake or ladder and returns the updated position.
-- `initializeSnakes()`: Adds all snakes to the board.
-- `initializeLadders()`: Adds all ladders to the board.
-
-### Player
-
-Stores player details.
-
-Important methods:
-
-- `getName()`: Returns the player's name.
-- `getPosition()`: Returns the player's current position.
-- `setPosition(int position)`: Updates the player's position after validation.
-
-### Dice
-
-Generates random dice values from 1 to 6.
-
-Important method:
-
-- `roll()`: Returns a random integer between 1 and 6.
-
-### Snake
-
-Represents one snake on the board.
-
-Important methods:
-
-- `getHead()`: Returns the snake's starting position.
-- `getTail()`: Returns the snake's ending position.
-
-### Ladder
-
-Represents one ladder on the board.
-
-Important methods:
-
-- `getStart()`: Returns the ladder's starting position.
-- `getEnd()`: Returns the ladder's ending position.
-
-## Sample Input/Output
+## Sample Gameplay
 
 ```text
-========== Snake and Ladder ==========
-1. Start Game
-2. Show Rules
-3. Exit
-======================================
-Enter your choice: 1
-Enter number of players (2 to 6): 2
-Enter name for Player 1: Alice
-Enter name for Player 2: Bob
+Player 1 rolled a 6
+Player 1 moved from 4 to 10
+Ladder! Move from 10 to 28
 
-Game started!
+Player 2 rolled a 4
+Player 2 moved from 8 to 12
 
-Current Positions:
-Alice -> 0
-Bob -> 0
-
-Alice's turn
-Alice rolled a 6.
-Alice moved from 0 to 6.
-Great! Ladder from 6 to 25.
-Alice is now at 25.
-
-Current Positions:
-Alice -> 25
-Bob -> 0
-
-Bob's turn
-Bob rolled a 4.
-Bob moved from 0 to 4.
-
-Current Positions:
-Alice -> 25
-Bob -> 4
+Player 1 reached 100
+Congratulations! Player 1 wins!
 ```
 
-The game continues until a player reaches exactly 100.
+---
 
-## Time Complexity
+## Future Enhancements
 
-Let `P` be the number of players and `T` be the number of turns played.
+* Save and load game functionality
+* Leaderboard system
+* Sound effects
+* Dice animation
+* Custom board configuration
+* Online multiplayer support
 
-- Each turn takes `O(P)` time because all player positions are displayed after every turn.
-- Snake and ladder lookup takes `O(1)` average time using `HashMap`.
-- Total game time complexity is `O(T * P)`.
+---
 
-## Space Complexity
+## Educational Purpose
 
-- Players require `O(P)` space.
-- Snakes and ladders require `O(S + L)` space, where `S` is the number of snakes and `L` is the number of ladders.
-- Since the board uses a fixed number of snakes and ladders, practical space complexity is `O(P)`.
+This project was developed as a mini-project to demonstrate Java programming, Swing GUI development, and Object-Oriented Programming principles.
