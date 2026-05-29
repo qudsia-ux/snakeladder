@@ -9,7 +9,7 @@ Snake and Ladder is a multiplayer board game developed using Java and Java Swing
 ## Authors
 
 * Qudsia Fatima
-* 
+  
 ---
 
 ## Technologies Used
